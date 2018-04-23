@@ -1,0 +1,153 @@
+header{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#titolo{
+	float:left;
+	color: rgb(47,72,117);
+	
+}
+
+body{
+	font-family: Arial;
+}
+
+form#ricerca{
+	float: right;
+	margin-right: 20px;
+}
+
+input#findBook{
+	width: 700px;
+}
+
+p{
+	font-size: 20px;
+	color: rgb(47,72,117);
+}
+
+a{
+	font-size: 15px;
+	text-decoration: none;
+	color: rgb(47,72,117);
+}
+
+a:active{
+	color: violet;
+}
+
+#chiSei, #registrati{
+	color: rgb(255, 153, 0);
+	margin-left: 20px;
+	font-size: 25px;
+}
+
+#ricercaLibri{
+	font-size:10px;
+}
+
+h2{
+	color: rgb(194,49,49);
+	font-size: 30px;
+}
+
+h2#b{
+	color: white;
+}
+
+h2#esplora{
+	color: rgb(47,72,117);
+	font-size: 30px;
+	font-weight: normal;
+}
+
+h3{
+	color: rgb(255,180,68);
+}
+
+h3#a{
+	color: orange;
+}
+
+hr#firstHR{
+	clear: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+aside{
+	float: left;
+	width: 250px;
+	margin-left: 20px;
+	
+}
+
+fieldset{
+	background-color: rgb(39, 85, 159);
+	border-radius: 15px;
+	border-style: none;
+	margin-right: 20px;
+}
+
+div:not(.hr1){;
+	padding-bottom: 8px;
+	width: 260px;
+}
+
+div.hr1{
+	border-left: 1px solid;
+	margin-left: 300px;
+	height: 860px;
+	border-color: gray;
+	margin-top: 20px;
+	padding-left: 15px;
+}
+
+.usernameLogIn, .passwordLogIn, .usernameReg, .passwordReg, .email, .terms{
+	text-align: right;
+}
+
+#inputPasswordRepeated{
+	float: right;
+}
+
+article{
+	float:left;
+	width: 350px;
+}
+
+#unoA, #unoB, #dueA, #dueB, #treA, #treB, #quattroA, #quattroB{
+	
+}
+
+#uno, #due{
+	border-bottom: 2px groove;
+}
+
+#uno{
+	padding-bottom: 23px;
+}
+
+#due, #quattro{
+	border-left: 2px groove;
+	padding-left: 15px;
+}
+
+#tre, #quattro{
+	margin-bottom: 100px;
+}
+
+hr#final1{
+	clear: left;
+}
+
+footer{
+	clear: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.forgotPsw, .submit, .signUp{
+	padding-left: 85px;
+}

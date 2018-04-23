@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Archivio biblioteca piccola città</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/stili.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="titolo"> <i>Romanzi e racconti</i></h1>
+            <form name="ricerca" id="ricerca">
+                <p id="ricercaLibri"> Cerca libri e romanzi... <br>
+                    <input type="search" autocomplete="on" name="keyword" id="keyword">  
+                    <input type="submit" value="find" id="submit"> 
+                </p>
+            </form> 
+        </header>
+        <hr id="firstHR">
+        <aside>
+            <p>Romanzi e racconti è semplicemente una base dati di romanzi e racconti. Puoi aggiungere i libri che ti piacciono, recensirli, etichettarli e condividerli. E puoi andare a vedere che cosa piace agli altri.</p>
+            <hr>
+            <form name="logIn">
+                <p id="chiSei"> chi sei? </p>
+                <div class="usernameLogIn">
+                    <label> username </label> 
+                    <input type="search" autocomplete="on">
+                </div>
+                <div class="passwordLogIn">
+                    <label> password </label>
+                    <input type="password" autocomplete="on">
+                </div>
+                <div class="forgotPsw">
+                    <a href="">forgot password?</a>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="sign in">
+                </div>    
+            </form>
+            <hr>
+            <form name="registrazione"> 
+                <p id="registrati">regìstrati!</p>
+                <div class="usernameReg">
+                    <label> username </label>
+                    <input type="search" autocomplete="on">
+                </div>
+                <div class="passwordReg">
+                    <label> password </label>
+                    <input type="password" autocomplete="on">
+                </div>
+                <div>
+                    <label id="passwordRepeated"> password <br> repeated </label>
+                    <input id="inputPasswordRepeated" type="password" autocomplete="on">
+                </div>
+                <div class="email">
+                    <label> email </label>
+                    <input type="search" autocomplete="on">
+                </div>
+                <div class="terms">
+                    <input type="checkbox"> 
+                    <label> I agree to the Terms of <br> Use. </label>
+                </div>
+                <div class="signUp">
+                    <input type="submit" value="sign up">
+                </div>
+            </form>
+        </aside>
+        <div class="hr1">
+            <fieldset>
+                <h2 id="b">Scopri</h2>
+                <h3 id="a">Cerca nella base dati per titolo, autore...</h3>
+                <form name="ricerca"> 
+                    <input type="search" autocomplete="on" name="keyword" id="findBook"> 
+                    <input type="submit" value="fruga" id="fruga"> 
+                </form>
+            </fieldset>
+            <h2 id="esplora">Esplora</h2>
+            <nav> 
+                <b>
+                <a href="">Libri aggioranti di recente</a>
+                |
+                <a href="">Tag popolari</a>
+                |
+                <a href="">Libri consigliati</a>
+                </b>
+            </nav>
+            <br>
+            <article id="uno">
+                <h2>Tom De Marco, Timothy Lister: <i>Peopleware</i> </h2>
+                <p>scifi, action, sci-fi, lucas, great, space, starwars, adventure, boring, sequel, ...</p>
+                <p id="unoA">in 16 lo raccomandano</p>
+                <p id="unoB">in 26 lo hanno letto</p>
+            </article>
+            <article id="due">
+                <h2>J.R.R. Tolkien, <i>Il signore degli anelli</i></h2>
+                <p>drama, prison, thriller, quality, over-rated, injustice, added, jailbreak, this, escape, ...</p>
+                <p id="dueA">in 16 lo raccomandano</p>
+                <p id="dueB">in 26 lo hanno letto</p>
+            </article>
+            <article id="tre">
+                <h2>Douglas Coupland, <i>Eleanor Rigby</i></h2>
+                <p>drugs, drama, weird, addiction, love, drug, ignorant, bliss, tragic, morale, ...</p>
+                <p id="treA">in 16 lo raccomandano</p>
+                <p id="treB">in 26 lo hanno letto</p>
+            </article>
+            <article id="quattro">
+                <h2>C. S. Lewis, <i>Lontano dal pianeta silenzioso</i></h2>
+                <p>pirates, action, adventure, comedy, depp, fantasy, pirate, curse, jack, caribbean, ...</p>
+                <p id="quattroA">in 116 lo raccomandano</p>
+                <p id="quattroB">in 216 lo hanno letto</p>
+            </article>
+        </div>
+        <footer>
+            <hr id="final">
+            <a href="">about</a>
+            |
+            <a href="">rss</a>
+            |
+            <img src="images/immagine.png" alt="" width="10" height="10">
+            |
+            <a href="">terms of use</a>
+            |
+            <a href="">contact us</a>
+            <hr>
+        </footer>
+    </body>
+</html>
