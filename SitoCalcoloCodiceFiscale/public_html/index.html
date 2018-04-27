@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calcolo codice fiscale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stile.css">
+        <script src="Script.js">
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Calcolo del codice fiscale</h1>
+        </header>
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li><a href=”index.html”>Home</a></li>
+                    <li><a href=”#”>Calcolo codice fiscale</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        Calcola il tuo codice fiscale a partire dai dati anagrafici, calcola online 
+        e stampa il tuo codice fiscale. Tutti i dati sottostanti sono obbligatori. <br> <br>
+        <form name="registrazione" method="post" action="/send"> <fieldset> 
+                <legend>Calcolo codice fiscale</legend> 
+                <img src="resource/image/100px-italia-stemma.png" align="right">
+                <p> 
+                    <label>Cognome</label> <br> 
+                    <input id="cognome" placeholder="inserire cognome" size="40" required> 
+                </p> 
+                <p> 
+                    <label>Nome</label> <br> 
+                    <input id="nome" placeholder="inserire nome" size="40" required> 
+                </p> 
+                <p> 
+                    <label>Sesso</label> <br> 
+                    M <input type="radio" name="sceltaSesso" value="M">
+                    F <input type="radio" name="sceltaSesso" value="F"> 
+                </p> 
+                <p> 
+                    <label>Data di nascita</label> <br> 
+                    <select name="giorno" id="giorno">
+                        <option value="01"> 01  </option>
+                        <option value="02"> 02  </option>
+                        <option value="03"> 03  </option>
+                        <option value="04"> 04  </option>
+                        <option value="05"> 05  </option>
+                        <option value="06"> 06  </option>
+                        <option value="07"> 07  </option>
+                        <option value="08"> 08  </option>
+                        <option value="09"> 09  </option>
+                        <option value="10"> 10  </option>
+                        <option value="11"> 11  </option>
+                        <option value="12"> 12  </option>
+                        <option value="13"> 13  </option>
+                        <option value="14"> 14  </option>
+                        <option value="15"> 15  </option>
+                        <option value="16"> 16  </option>
+                        <option value="17"> 17  </option>
+                        <option value="18"> 18  </option>
+                        <option value="19"> 19  </option>
+                        <option value="20"> 20  </option>
+                        <option value="21"> 21  </option>
+                        <option value="22"> 22  </option>
+                        <option value="23"> 23  </option>
+                        <option value="24"> 24  </option>
+                        <option value="25"> 25  </option>
+                        <option value="26"> 26  </option>
+                        <option value="27"> 27  </option>
+                        <option value="28"> 28  </option>
+                        <option value="29"> 29  </option>
+                        <option value="30"> 30  </option>
+                        <option value="31"> 31  </option>
+                    </select>
+                    <select name="mese" id="mese">
+                        <option value="01"> gennaio  </option>
+                        <option value="02"> febbraio  </option>
+                        <option value="03"> marzo  </option>
+                        <option value="04"> aprile  </option>
+                        <option value="05"> maggio  </option>
+                        <option value="06"> giugno  </option>
+                        <option value="07"> luglio  </option>
+                        <option value="08"> agosto  </option>
+                        <option value="09"> settembre  </option>
+                        <option value="10"> ottobre  </option>
+                        <option value="11"> novembre  </option>
+                        <option value="12"> dicembre  </option>
+                    </select>
+                    <input id="anno" name="anno" placeholder="inserire anno di nascita" size="40">
+                </p>
+                <p>
+                    <label> Scegliere provincia di provenienza. In caso di nascita in uno Stato estero selezionare "EE"</label><br>
+                    <select id="province" name="province">
+                        
+                    </select>
+                    <input type="button" name="carica" value="carica" onclick="caricaProvince()"> 
+                <p> 
+                    <label>Comune o Stato estero di nascita</label> <br> 
+                    <input id="comuneStatoEstero" name="luogo" placeholder="comune o Stato estero" size="40"> 
+                </p> 
+                <p> 
+                    <input type="button" name="registra" value="Calcola" onclick="main()"> 
+                </p>
+            </fieldset> 
+        </form> 
+
+    </body>
+</html>
