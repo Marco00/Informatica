@@ -21,8 +21,8 @@ and open the template in the editor.
         <div id="menu">
             <nav>
                 <ul>
-                    <li><a href=”index.html”>Home</a></li>
-                    <li><a href=”#”>Calcolo codice fiscale</a></li>
+                    <li><a href=http://localhost:8383/SitoCalcoloCodiceFiscale/index.html>Home</a></li>
+                    <li><a href=http://localhost:8383/SitoCalcoloCodiceFiscale/index.html>Calcolo codice fiscale</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,7 +30,6 @@ and open the template in the editor.
         Calcola il tuo codice fiscale a partire dai dati anagrafici, calcola online 
         e stampa il tuo codice fiscale. Tutti i dati sottostanti sono obbligatori. <br> <br>
         <form name="registrazione" method="post" action="/send"> <fieldset> 
-                <legend>Calcolo codice fiscale</legend> 
                 <img src="resource/image/100px-italia-stemma.png" align="right">
                 <p> 
                     <label>Cognome</label> <br> 
@@ -47,7 +46,7 @@ and open the template in the editor.
                 </p> 
                 <p> 
                     <label>Data di nascita</label> <br> 
-                    <select name="giorno" id="giorno">
+                    <select name="giorno">
                         <option value="01"> 01  </option>
                         <option value="02"> 02  </option>
                         <option value="03"> 03  </option>
@@ -80,7 +79,7 @@ and open the template in the editor.
                         <option value="30"> 30  </option>
                         <option value="31"> 31  </option>
                     </select>
-                    <select name="mese" id="mese">
+                    <select name="mese">
                         <option value="01"> gennaio  </option>
                         <option value="02"> febbraio  </option>
                         <option value="03"> marzo  </option>
@@ -94,14 +93,12 @@ and open the template in the editor.
                         <option value="11"> novembre  </option>
                         <option value="12"> dicembre  </option>
                     </select>
-                    <input id="anno" name="anno" placeholder="inserire anno di nascita" size="40">
+                    <input id="anno" name="anno" placeholder="inserire anno di nascita" size="40" maxlength="4">
                 </p>
                 <p>
                     <label> Scegliere provincia di provenienza. In caso di nascita in uno Stato estero selezionare "EE"</label><br>
                     <select id="province" name="province">
-                        
                     </select>
-                    <input type="button" name="carica" value="carica" onclick="caricaProvince()"> 
                 <p> 
                     <label>Comune o Stato estero di nascita</label> <br> 
                     <input id="comuneStatoEstero" name="luogo" placeholder="comune o Stato estero" size="40"> 

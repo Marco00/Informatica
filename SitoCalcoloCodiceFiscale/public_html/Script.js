@@ -8673,7 +8673,7 @@ const province = ["EE", "AG", "AL", "AN", "AO", "AR", "AP", "AT", "AV", "BA", "B
 
 const vocali = "AEIOU";
 
-function caricaProvince() {
+window.onload = function caricaProvince() {
     var x = document.getElementById("province");
     var option;
     for (var i = 0; i < province.length; i++) {
@@ -8687,11 +8687,8 @@ function caricaProvince() {
 function main() {
     var cognome = document.getElementById('cognome').value;
     var nome = document.getElementById('nome').value;
-    var data = generaData();
     var comuneStato = generaComuneOStatoEstero();
-    var cf = calcoloCF(generaCognome(cognome), generaNome(nome), data, comuneStato);
-    alert(cf);
-
+    calcoloCF(generaCognome(cognome), generaNome(nome), generaGiorno(), generaMese(), generaAnno(), comuneStato);
 }
 
 function generaCognome(surname) {
@@ -8732,32 +8729,46 @@ function generaNome(name) {
     return nome;
 }
 
-function generaData() {
+function generaGiorno(){
     var sessoPersona = (document.forms.registrazione.sceltaSesso.value).toUpperCase();
     var giorno = parseInt(document.forms.registrazione.giorno.value);
-    let mese = document.forms.registrazione.mese.value;
-    var anno = document.getElementById("anno").value;
+    if (sessoPersona == "F") {
+        giorno = giorno + 40;
+    }
+    if (giorno < 10)
+        giorno = "0" + giorno;
+    return giorno;
+}
 
-    var year = anno.substring(2, 4);
+function generaMese(){
+    var mese = document.forms.registrazione.mese.value;
+    var giorno = parseInt(document.forms.registrazione.giorno.value);
     var inizialeMese = "";
+    var checked = true;
     switch (mese) {
         case "01":
             inizialeMese = "A";
             break;
         case "02":
             inizialeMese = "B";
+            if(giorno == 29 || giorno == 30 || giorno == 31)
+                checked = false;
             break;
         case "03":
             inizialeMese = "C";
             break;
         case "04":
             inizialeMese = "D";
+            if(giorno == 31)
+                checked = false;
             break;
         case "05":
             inizialeMese = "E";
             break;
         case "06":
             inizialeMese = "H";
+            if(giorno == 31)
+                checked = false;
             break;
         case "07":
             inizialeMese = "L";
@@ -8767,24 +8778,29 @@ function generaData() {
             break;
         case "09":
             inizialeMese = "P";
+            if(giorno == 31)
+                checked = false;
             break;
         case "10":
             inizialeMese = "R";
             break;
         case "11":
             inizialeMese = "S";
+            if(giorno == 31)
+                checked = false;
             break;
         case "12":
             inizialeMese = "T";
             break;
     }
-    if (sessoPersona == "F") {
-        giorno = giorno + 40;
-    }
-    if(giorno < 10)
-        giorno = "0" + giorno;
-    var data = year + inizialeMese + giorno;
-    return data;
+    var arr = [inizialeMese, checked];
+    return arr;
+}
+
+function generaAnno() {
+    var anno = document.getElementById("anno").value;
+    var year = anno.substring(2, 4);
+    return year;
 }
 
 function generaComuneOStatoEstero() {
@@ -8825,9 +8841,11 @@ function generaComuneOStatoEstero() {
     return codiceCatastale;
 }
 
-function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
+function calcoloCF(cognome, nome, giorno, mese, anno, comuneOStatoEstero) {
     cognome = cognome.toUpperCase();
     nome = nome.toUpperCase();
+    var checked = mese[1];
+    var data = anno + mese[0] + giorno;
     var cf = cognome + nome + data + comuneOStatoEstero;
     var num;
     var somma = 0, somma1 = 0, somma2 = 0;
@@ -9141,5 +9159,8 @@ function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
             break;
     }
     var persona = cognome + nome + data + comuneOStatoEstero + lettera;
-    return persona;
+    if(mese[1] == false)
+        alert("Data impossibile!\n\Ricompilare form con giorno e mese di nascita corretti.");
+    else
+        alert("Il codice fiscale calcolato è il seguente: "+persona);
 }
