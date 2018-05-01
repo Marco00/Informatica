@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Esercizio 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <script src="Script.js">
+
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 2</h1>
+        <form name="registrazione">
+            <p>
+                <label>Cognome e nome</label> <br> 
+                <input id="cognomeNome" maxlength="50"> 
+            </p>
+            <p>
+                <label> Sesso </label> <br>
+                <input type="radio" name="sesso" value="M" /> M
+                <input type="radio" name="sesso" value="F" /> F
+            </p>
+            <p>
+                <label>Ateneo</label> <br> 
+                <select name="ateneo">
+                    <option value=""></option>
+                    <option value="padova"> Università degli Studi di Padova  </option>
+                    <option value="venezia"> Università Cà Foscari Venezia  </option>
+                    <option value="verona"> Università degli Studi di Verona  </option>
+                    <option value="veneziaIuav"> Università Iuav di Venezia  </option>
+                </select>
+            </p>
+            <p>
+                <label>CAP</label> <br> 
+                <input id="cap" maxlength="5" onblur="controlloCAP()"> 
+            </p>
+            <p>
+                <input type="checkbox" name="studenteLavoratore" value="studenteLavoratore"/> Studente lavoratore
+            </p>
+            <p>
+                <label>Descrizione lavoro svolto</label> <br> 
+                <input id="lavoro" maxlength="80"> 
+            </p>
+            <p> 
+                <input type="button" value="Invio" onclick="main()"> 
+                <input type="button" value="Reset" onclick="doReset()"> 
+            </p>
+        </form>   
+    </body>
+</html>
