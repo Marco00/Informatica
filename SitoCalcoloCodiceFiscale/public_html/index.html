@@ -14,7 +14,7 @@ and open the template in the editor.
 
         </script>
     </head>
-    <body>
+    <body onload="caricaProvince(), caricaAnni()">
         <header>
             <h1>Calcolo del codice fiscale</h1>
         </header>
@@ -93,7 +93,8 @@ and open the template in the editor.
                         <option value="11"> novembre  </option>
                         <option value="12"> dicembre  </option>
                     </select>
-                    <input id="anno" name="anno" placeholder="inserire anno di nascita" size="40" maxlength="4">
+                    <select id="anno" name="anno">
+                    </select>
                 </p>
                 <p>
                     <label> Scegliere provincia di provenienza. In caso di nascita in uno Stato estero selezionare "EE"</label><br>
@@ -107,7 +108,10 @@ and open the template in the editor.
                     <input type="button" name="registra" value="Calcola" onclick="main()"> 
                 </p>
             </fieldset> 
-        </form> 
-
+        </form>
+        <br>
+        <p id="codiceFiscale">
+            Codice fiscale:
+        </p>
     </body>
 </html>
