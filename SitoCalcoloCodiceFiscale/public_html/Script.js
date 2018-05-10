@@ -299,12 +299,10 @@ const province = ["EE", "AG", "AL", "AN", "AO", "AR", "AP", "AT", "AV", "BA", "B
     "PI", "PT", "PN", "PZ", "PO", "RG", "RA", "RC", "RE", "RI", "RN", "RM", "RO", "SA", "SS", "SV", "SI", "SR", "SO", "TA", "TE", "TR", "TO", "TP", "TN", "TV", "TS", "UD", "VA", "VE", "VB", "VC", "VR", "VV", "VI", "VT"
 ];
 
-const vocali = "AEIOU";
-
 function caricaProvince() {
-    var x = document.getElementById("province");
-    var option;
-    for (var i = 0; i < province.length; i++) {
+    let x = document.getElementById("province");
+    let option;
+    for (let i = 0; i < province.length; i++) {
         option = document.createElement("option");
         option.text = province[i];
         x.add(option);
@@ -312,9 +310,9 @@ function caricaProvince() {
 }
 
 function caricaAnni() {
-    var x = document.getElementById("anno");
-    var option;
-    for (var i = 1900; i < 2019; i++) {
+    let x = document.getElementById("anno");
+    let option;
+    for (let i = 1900; i < 2019; i++) {
         option = document.createElement("option");
         option.text = i;
         x.add(option);
@@ -322,23 +320,23 @@ function caricaAnni() {
 }
 
 function main() {
-    var cognome = document.getElementById('cognome').value;
-    var nome = document.getElementById('nome').value;
-    var comuneStato = generaComuneOStatoEstero();
+    let cognome = document.getElementById('cognome').value;
+    let nome = document.getElementById('nome').value;
+    let comuneStato = generaComuneOStatoEstero();
     calcoloCF(generaCognome(cognome), generaNome(nome), generaData(), comuneStato);
 }
 
 function generaCognome(surname) {
     surname.toUpperCase();
-    var cognome = surname.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '');
+    let cognome = surname.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '');
     if (cognome.length < 3) {
-        var vocali = surname.replace(/[^AEIOU]/gi, '');
-        for (var i = 0; i < vocali.length; i++) {
+        let vocali = surname.replace(/[^AEIOU]/gi, '');
+        for (let i = 0; i < vocali.length; i++) {
             cognome = cognome + vocali.charAt(i);
             if (cognome.length == 3)
                 break;
         }
-        for (var i = cognome.length; i < 4; i++) {
+        for (let i = cognome.length; i < 4; i++) {
             cognome = cognome + "X";
         }
     }
@@ -350,15 +348,15 @@ function generaCognome(surname) {
 
 function generaNome(name) {
     name = name.toUpperCase();
-    var nome = name.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '');
+    let nome = name.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '');
     if (nome.length < 3) {
-        var vocali = name.replace(/[^AEIOU]/gi, '');
-        for (var i = 0; i < vocali.length; i++) {
+        let vocali = name.replace(/[^AEIOU]/gi, '');
+        for (let i = 0; i < vocali.length; i++) {
             nome = nome + vocali.charAt(i);
             if (nome.length == 3)
                 break;
         }
-        for (var i = nome.length; i < 4; i++) {
+        for (let i = nome.length; i < 4; i++) {
             nome = nome + "X";
         }
     }
@@ -369,13 +367,16 @@ function generaNome(name) {
 }
 
 function generaData() {
-    var sessoPersona = (document.forms.registrazione.sceltaSesso.value).toUpperCase();
-    var giorno = parseInt(document.forms.registrazione.giorno.value);
-    var mese = document.forms.registrazione.mese.value;
-    var anno = document.forms.registrazione.anno.value;
+    let checkedGender = true;
+    let sessoPersona = (document.forms.registrazione.sceltaSesso.value).toUpperCase();
+    if(sessoPersona == "")
+        checkedGender = false;
+    let giorno = parseInt(document.forms.registrazione.giorno.value);
+    let mese = document.forms.registrazione.mese.value;
+    let anno = document.forms.registrazione.anno.value;
     
-    var inizialeMese = "";
-    var checkedMonth = true;
+    let inizialeMese = "";
+    let checkedMonth = true;
     switch (mese) {
         case "01":
             inizialeMese = "A";
@@ -385,7 +386,7 @@ function generaData() {
             if (giorno == 30 || giorno == 31)
                 checkedMonth = false;
             if (giorno == 29) { //verifica anno bisestile
-                var i;
+                let i;
                 for (i = 1900; i < 2019; i = i + 4) {
                     if (anno == i) {
                         checkedMonth = true;
@@ -441,20 +442,20 @@ function generaData() {
     if (giorno < 10)
         giorno = "0" + giorno;
     
-    var year = anno.substring(2, 4);
-    var arr = [giorno, inizialeMese, year, checkedMonth];
+    let year = anno.substring(2, 4);
+    let arr = [giorno, inizialeMese, year, checkedMonth, checkedGender];
     return arr;
 }
 
 function generaComuneOStatoEstero() {
-    var provincia = document.forms.registrazione.province.value;
-    var comuneItalianoOstatoEstero = (document.getElementById("comuneStatoEstero").value).toUpperCase();
-    var elem = "";
-    var codiceCatastale = "";
+    let provincia = document.forms.registrazione.province.value;
+    let comuneItalianoOstatoEstero = (document.getElementById("comuneStatoEstero").value).toUpperCase();
+    let elem = "";
+    let codiceCatastale = "";
 
     switch (provincia) {
         case "EE":
-            for (var i = 0; i < CODICI_CATASTALI.EE.length; i++) {
+            for (let i = 0; i < CODICI_CATASTALI.EE.length; i++) {
                 elem = CODICI_CATASTALI.EE[i];
                 if (elem[0] == (comuneItalianoOstatoEstero)) {
                     codiceCatastale = elem[1];
@@ -463,7 +464,7 @@ function generaComuneOStatoEstero() {
             }
             break;
         case "VE":
-            for (var i = 0; i < CODICI_CATASTALI.VE.length; i++) {
+            for (let i = 0; i < CODICI_CATASTALI.VE.length; i++) {
                 elem = CODICI_CATASTALI.VE[i];
                 if (elem[0] == (comuneItalianoOstatoEstero)) {
                     codiceCatastale = elem[1];
@@ -487,11 +488,11 @@ function generaComuneOStatoEstero() {
 function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
     cognome = cognome.toUpperCase();
     nome = nome.toUpperCase();
-    var date = data[2] + data[1] + data[0];
-    var cf = cognome + nome + data + comuneOStatoEstero;
-    var num;
-    var somma = 0, somma1 = 0, somma2 = 0;
-    for (var i = 1; i < 15; i = i + 2) {
+    let date = data[2] + data[1] + data[0];
+    let cf = cognome + nome + data + comuneOStatoEstero;
+    let num;
+    let somma = 0, somma1 = 0, somma2 = 0;
+    for (let i = 1; i < 15; i = i + 2) {
         switch (cf.charAt(i)) {
             case '0':
                 num = 0;
@@ -604,7 +605,7 @@ function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
         }
         somma1 = somma1 + num;
     }
-    for (var i = 0; i < 15; i = i + 2) {
+    for (let i = 0; i < 15; i = i + 2) {
         switch (cf.charAt(i)) {
             case '0':
                 num = 1;
@@ -718,8 +719,8 @@ function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
         somma2 = somma2 + num;
     }
     somma = somma1 + somma2;
-    var codiceControllo = somma % 26;
-    var lettera;
+    let codiceControllo = somma % 26;
+    let lettera;
     switch (codiceControllo) {
         case 0:
             lettera = "A";
@@ -800,15 +801,19 @@ function calcoloCF(cognome, nome, data, comuneOStatoEstero) {
             lettera = "Z";
             break;
     }
-    var persona = cognome + nome + date + comuneOStatoEstero + lettera;
-    if (data[3] == false)
+    let persona = cognome + nome + date + comuneOStatoEstero + lettera;
+    if (!data[3])
         alert("Data impossibile!\n\Ricompilare form con giorno, mese e anno di nascita corretti.");
     else{
         if (comuneOStatoEstero == "")
             alert("Provincia o comune errati!\n\Ricompilare form con provincia e comune corretti.");
         else{
-            alert("Il codice fiscale calcolato è il seguente: " + persona);
-            document.getElementById("codiceFiscale").innerHTML = "Codice fiscale: " + persona;
+            if(!data[4])
+                alert("Campo \"sesso\" non compilato !\n\Ricompilare form con il proprio sesso.");
+            else{
+                alert("Il codice fiscale calcolato è il seguente: " + persona);
+                document.getElementById("codiceFiscale").innerHTML = "Codice fiscale: " + persona;
+            }
         }
     }
 }
