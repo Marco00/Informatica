@@ -4,11 +4,30 @@
  * and open the template in the editor.
  */
 
+let checkedCAP = true;
+
 function controlloCAP() {
     var cap = document.getElementById("cap").value;
+    var checked = true;
     if (cap.length < 5) {
+        checkedCAP = false;
         alert("Campo CAP contiene deve contenere 5 cifre!");
+    } else {
+        var i = 0;
+        while (i < cap.length) {
+            if (cap.charAt(i) == '0' || cap.charAt(i) == '1' || cap.charAt(i) == '2' ||
+                cap.charAt(i) == '3' || cap.charAt(i) == '4' || cap.charAt(i) == '5' ||
+                cap.charAt(i) == '6' || cap.charAt(i) == '8' || cap.charAt(i) == '9') {
+                i++;
+            } else {
+                alert("Campo CAP non formato da soli numeri!");
+                document.getElementById("cap").focus();
+                checkedCAP = false;
+                break;
+            }
+        }
     }
+    return checked;
 }
 
 //Funzione principale
@@ -17,7 +36,7 @@ function main(){
     var sesso = verificaSesso();
     var ateneo = verificaAteneo();
     var studenteLavoratore = verificaStudenteLavoratore();
-    if((nomeCognome && sesso && ateneo && studenteLavoratore) == true)
+    if((nomeCognome && sesso && ateneo && studenteLavoratore && checkedCAP) == true)
         alert("Form inviato con successo");
 }
 
