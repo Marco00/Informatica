@@ -5,14 +5,14 @@
  */
 
 function controllaCampi() {
-    var cognome = document.getElementById("cognome").value;
-    var nome = document.getElementById("nome").value;
-    var matricola = document.getElementById("matricola").value;
-    var regione = document.forms.registrazione.regione.value;
-    var email = document.getElementById("email").value;
-    var telefono = document.getElementById("telefono").value;
-    var richieste = document.getElementById("richieste").value;
-    var checked = true;
+    let cognome = document.getElementById("cognome").value;
+    let nome = document.getElementById("nome").value;
+    let matricola = document.getElementById("matricola").value;
+    let regione = document.forms.registrazione.regione.value;
+    let email = document.getElementById("email").value;
+    let telefono = document.getElementById("telefono").value;
+    let richieste = document.getElementById("richieste").value;
+    let checked = true;
     if (cognome == "") {
         alert("Campo cognome non compilato!");
         document.getElementById("cognome").focus();
@@ -23,7 +23,7 @@ function controllaCampi() {
         document.getElementById("nome").focus();
         checked = false;
     }
-    var i = 0;
+    let i = 0;
     while (i < matricola.length) {
         if (matricola.charAt(i) == '0' || matricola.charAt(i) == '1' || matricola.charAt(i) == '2' ||
                 matricola.charAt(i) == '3' || matricola.charAt(i) == '4' || matricola.charAt(i) == '5' ||
@@ -63,7 +63,7 @@ function controllaCampi() {
         document.getElementById("telefono").focus();
         checked = false;
     } else {
-        var i = 0;
+        let i = 0;
         while (i < telefono.length) {
             if (telefono.charAt(i) == '0' || telefono.charAt(i) == '1' || telefono.charAt(i) == '2' ||
                 telefono.charAt(i) == '3' || telefono.charAt(i) == '4' || telefono.charAt(i) == '5' ||
