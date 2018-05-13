@@ -32,12 +32,10 @@ public class AlberoBin<T extends Comparable<T>>{
             return false;
     }
     public void addElem(T elem){
-        //System.out.println(elem);
 	NodoBin<T> temp=null;
 	boolean verifica=false;
 	if(isEmpty()){
             radice=new NodoBin(elem ,null, null);
-            //System.out.println("creata radice "+radice.info);
         } else {
             temp=radice;
             while(verifica==false){
@@ -45,25 +43,17 @@ public class AlberoBin<T extends Comparable<T>>{
                     if(temp.left==null){
 			temp.left=new NodoBin(elem, null, null);
                         temp=temp.left;
-                        //System.out.print("info "+temp.info);
-			//System.out.println("    è stata creata a sinistra");
 			verifica=true;
-                    } else {
+                    } else
                         temp=temp.left;
-                        //System.out.println("temp è posizionato su "+temp.info+". Si è mosso a sinistra");
-                    }
                 } else {
                     if(elem.compareTo(temp.info)>0){
                         if(temp.right==null){
                             temp.right=new NodoBin(elem, null, null);
                             temp=temp.right;
-                            //System.out.print("info "+temp.info);
-                            //System.out.println("    è stata creata a destra");
                             verifica=true;
-                        } else {
+                        } else 
                             temp=temp.right;
-                            //System.out.println("temp è posizionato su "+temp.info+". Si è mosso a destra");
-                        }
                     } else {
                         System.out.println("ATTENZIONE!"+elem+" è un elemento già esistente: non inserito all'interno dell'albero");
                         verifica=true;
@@ -71,11 +61,6 @@ public class AlberoBin<T extends Comparable<T>>{
                 }
             }
         }
-        /**
-        System.out.println("");
-        System.out.println("fatto");
-        System.out.println("");
-        */
     }	
     public void visitaSimmetrica(NodoBin nodo, ListaConcatenata li) {
 	if(nodo.left != null)
