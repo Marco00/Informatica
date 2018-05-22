@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author marco.pistollato
+ * @author Marco
  */
 public class MailPageController implements Initializable {
 
@@ -107,5 +107,4 @@ public class MailPageController implements Initializable {
         mainArea.setText(currentText);
         command.setText("");
     }
-
 }

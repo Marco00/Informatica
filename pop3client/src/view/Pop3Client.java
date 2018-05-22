@@ -7,11 +7,10 @@ package view;
  */
 import java.net.*;
 import java.io.*;
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sergio
+ * @author Marco
  */
 public class Pop3Client {
 
@@ -70,10 +69,6 @@ public class Pop3Client {
         return isConnected;
     } // connect()
 
-    /**
-     *
-     * @return @throws java.io.IOException
-     */
     public int getNumOfMessages() throws IOException {
         int num = 0;
 
@@ -82,7 +77,7 @@ public class Pop3Client {
 
         out.println(command);
 
-        answer = input.readLine(); // Dovrebbe essere +OK nn mmmm
+        answer = input.readLine();
         System.out.println(answer);
         if (answer.contains("+OK")) {
             num = Integer.parseInt(answer.split(" ")[1]);
@@ -93,8 +88,7 @@ public class Pop3Client {
     public String sendCommand(String com) throws IOException {
         String commandLine = com;
         out.println(commandLine);
-        String answer = input.readLine();                     //answer può essere formata da più righe
+        String answer = input.readLine();
         return answer;
     }
-
 }
