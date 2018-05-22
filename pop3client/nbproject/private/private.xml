@@ -5,8 +5,8 @@
         <group>
             <file>file:/C:/Users/Marco/Documents/GitHub/Informatica/pop3client/src/MainApp.java</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/Informatica/pop3client/src/myServer.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/Informatica/pop3client/src/view/Pop3Client.java</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/Informatica/pop3client/src/view/MailPageController.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Informatica/pop3client/src/util/Pop3Client.java</file>
         </group>
     </open-files>
 </project-private>
