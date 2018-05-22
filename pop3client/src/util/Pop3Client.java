@@ -14,8 +14,8 @@ import java.io.*;
  */
 public class Pop3Client {
 
-    public final InetAddress server;
-    public final int port;
+    private final InetAddress server;
+    private final int port;
 
     private final String User;
     private final String Pass;
@@ -80,7 +80,8 @@ public class Pop3Client {
         answer = input.readLine();
         System.out.println(answer);
         if (answer.contains("+OK")) {
-            num = Integer.parseInt(answer.split(" ")[1]);
+            String n = String.valueOf(answer.charAt(14));
+            num = Integer.parseInt(n);
         }
         return num;
     }

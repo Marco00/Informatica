@@ -33,7 +33,7 @@ public class MailPageController implements Initializable {
     private TextArea mainArea; //questo funziona come schermo cmd
     @FXML
     private TextField command;
-    public String currentText; //variabile di appoggio per il testo
+    private String currentText; //variabile di appoggio per il testo
 
     /**
      * Initializes the controller class.
